@@ -166,7 +166,7 @@ class Ui_DomainLookup(object):
     def whoisIt(self):
         screen = self.domainInput.toPlainText()
         screen = screen.translate({ord(c): None for c in string.whitespace})
-        print(screen)
+        
         try:
             domain = whois.whois(screen)
 
