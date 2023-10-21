@@ -112,6 +112,7 @@ class Ui_DomainLookup(object):
         self.copyButton.setText("Copy")
 
         screen = self.domainInput.toPlainText()
+        # delete whitespaces from adress
         screen = screen.translate({ord(c): None for c in string.whitespace})
         
         try:
@@ -140,6 +141,8 @@ class Ui_DomainLookup(object):
             self.outputField.setText(f"ERROR - timeout. Check if domain name is correct and your internet connection is good")
         except dns.resolver.NoAnswer:
             self.outputField.setText(f"ERROR - no answer. Check if domain name is correct and your internet connection is good")
+        except:
+            self.outputField.setText(f"UNKNOWN ERROR")
         
     def copy(self):
 
@@ -150,9 +153,11 @@ class Ui_DomainLookup(object):
 
     def saveIt(self):
             pass
+            # to do in the future
     
     def whoisIt(self):
         screen = self.domainInput.toPlainText()
+        # delete whitespaces from adress
         screen = screen.translate({ord(c): None for c in string.whitespace})
         
         try:
