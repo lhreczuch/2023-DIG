@@ -1,9 +1,3 @@
-import dns.resolver
-from PyQt5 import QtCore, QtGui, QtWidgets
-import string
-import pyperclip
-import whois
-
 
 class Ui_DomainLookup(object):
     def setupUi(self, DomainLookup):
@@ -173,6 +167,11 @@ class Ui_DomainLookup(object):
             self.outputField.setText(f"Cannot find domain: {screen}")
 
 if __name__ == "__main__":
+    import dns.resolver
+    from PyQt5 import QtCore, QtGui, QtWidgets
+    import string
+    import pyperclip
+    import whois
     import sys
     app = QtWidgets.QApplication(sys.argv)
     DomainLookup = QtWidgets.QMainWindow()
